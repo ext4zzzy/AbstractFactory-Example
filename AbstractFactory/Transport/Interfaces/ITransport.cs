@@ -1,4 +1,4 @@
-﻿namespace AbstractFactory.Factories.Interfaces;
+﻿namespace AbstractFactory.Transport.Interfaces;
 
 public interface ITransport 
 {

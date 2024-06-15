@@ -1,7 +1,8 @@
 ﻿using AbstractFactory;
-using AbstractFactory.Factories;
-using AbstractFactory.Factories.Interfaces;
+using AbstractFactory.Transport;
+using AbstractFactory.Transport.Interfaces;
 using AbstractFactory.TransportHandler;
+using AbstractFactory.TransportHandler.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -10,12 +11,12 @@ using IHost host = Host.CreateDefaultBuilder()
     .ConfigureServices((_, services) =>
     {
         services.AddSingleton<ITransportHandler, TransportHandler>();
-        services.AddSingleton<ITransportFactory, TransportFactory>();
+        services.AddSingleton<ITransportFacility, TransportFacility>();
     })
     .Build();
 
-ITransportFactory transportFactory = host.Services.GetRequiredService<ITransportFactory>();
+ITransportFacility transportFacility = host.Services.GetRequiredService<ITransportFacility>();
 ITransportHandler transportHandler = host.Services.GetRequiredService<ITransportHandler>();
     
 ClientHandler clientHandler = new();
-clientHandler.Handle( transportHandler, transportFactory);
+clientHandler.Handle( transportHandler, transportFacility);

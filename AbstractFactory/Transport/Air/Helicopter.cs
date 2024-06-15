@@ -1,8 +1,8 @@
-﻿using AbstractFactory.Factories.Interfaces;
+﻿using AbstractFactory.Transport.Interfaces;
 
-namespace AbstractFactory.AirTransport;
+namespace AbstractFactory.Transport.Air;
 
-public class Helicopter : ITransport
+public class Helicopter : IAirTransport
 {
     public int MaxSpeed => 200;
 

@@ -1,8 +1,8 @@
-﻿using AbstractFactory.Factories.Interfaces;
+﻿using AbstractFactory.Transport.Interfaces;
 
-namespace AbstractFactory.Factories.GroundTransport;
+namespace AbstractFactory.Transport.Ground;
 
-public class Truck : ITransport
+public class Truck : ITransport, IGroundTransport
 {
     public int MaxSpeed => 60;
 

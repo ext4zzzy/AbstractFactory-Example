@@ -1,4 +1,4 @@
-﻿namespace AbstractFactory.Enums;
+﻿namespace AbstractFactory.Transport.Enums;
 
 public enum TransportType
 {

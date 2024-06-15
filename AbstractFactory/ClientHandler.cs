@@ -1,11 +1,16 @@
-﻿using AbstractFactory.Enums;
-using AbstractFactory.Factories.Interfaces;
+﻿
+
+using AbstractFactory.Transport.Enums;
+using AbstractFactory.Transport.Factories.AirFactory.Interfaces;
+using AbstractFactory.Transport.Factories.GroundFactory.Interfaces;
+using AbstractFactory.Transport.Interfaces;
+using AbstractFactory.TransportHandler.Interfaces;
 
 namespace AbstractFactory;
 
 public class ClientHandler
 {
-    public void Handle(ITransportHandler transportHandler, ITransportFactory transportFactory)
+    public void Handle(ITransportHandler transportHandler, ITransportFacility transportFacility)
     {
         while (true)
         {
@@ -21,12 +26,12 @@ public class ClientHandler
                 switch (transport)
                 {
                     case TransportType.Ground:
-                        IGroundFactory groundFactory = transportFactory.CreateGroundFactory();
+                        IGroundFactory groundFactory = transportFacility.CreateGroundFactory();
                         transportHandler.HandleGround(groundFactory);
                         break;
                     
                     case TransportType.Air:
-                        IAirFactory airFactory = transportFactory.CreateAirFactory();
+                        IAirFactory airFactory = transportFacility.CreateAirFactory();
                         transportHandler.HandleAir(airFactory);
                         break;
                 }

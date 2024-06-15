@@ -1,6 +1,8 @@
-﻿using AbstractFactory.Factories.Interfaces;
+﻿
+using AbstractFactory.Transport.Factories.AirFactory.Interfaces;
+using AbstractFactory.Transport.Factories.GroundFactory.Interfaces;
 
-namespace AbstractFactory;
+namespace AbstractFactory.TransportHandler.Interfaces;
 
 public interface ITransportHandler
 {
