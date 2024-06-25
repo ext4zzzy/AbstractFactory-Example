@@ -2,7 +2,7 @@
 
 namespace AbstractFactory.Transport.Ground;
 
-public class Truck : ITransport, IGroundTransport
+public class Truck : IGroundTransport
 {
     public int MaxSpeed => 60;
 
